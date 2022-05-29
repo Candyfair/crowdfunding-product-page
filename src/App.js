@@ -32,7 +32,7 @@ const App = () => {
       </footer>
     </div>
   );
-}
+};
 
 // == Export
 export default App;

@@ -1,9 +1,24 @@
 import './style.scss';
 
 const Funding = () => (
-  <div>
-    Funding
-  </div>
+  <section>
+    <div>
+      <div>$xxx</div>
+      <div>of $100,000 backed</div>
+    </div>
+
+    <div>
+      <div>xxx</div>
+      <div>total backers</div>
+    </div>
+
+    <div>
+      <div>xxx</div>
+      <div>days left</div>
+    </div>
+
+    <div>%%%</div>
+  </section>
 );
 
 export default Funding;

@@ -2,19 +2,20 @@ import PropTypes from 'prop-types';
 
 import './style.scss';
 
-const Options = ({ id, title, pledge, description, qty }) => (
-  <div>
-    <ul>
-      <li>{id}</li>
-      <li>{title}</li>
-      <li>{pledge}</li>
-      <li>{description}</li>
-      <li>{qty}</li>
-    </ul>
-  </div>
+const Options = ({
+  id, title, pledge, description, qty,
+}) => (
+
+  <article key={id}>
+    <h3>{title}</h3>
+    <span>Pledge ${pledge} or more</span>
+    <p>{description}</p>
+    <span>{qty}</span> <span>left</span>
+    <button type="submit">Select Reward</button>
+  </article>
 );
 
-Options.proTypes = {
+Options.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   pledge: PropTypes.number.isRequired,
