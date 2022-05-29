@@ -16,7 +16,7 @@ import data from './data/options';
 const App = () => {
   const { options } = data;
   return (
-    <div>
+    <div className="global">
       <header>
         <Header />
       </header>

@@ -1,26 +1,83 @@
 @use 'reset';
-@use 'vars';
+@import '../styles/vars';
 
 @font-face {
   font-family: 'Commissioner';
-  src: url('../assets/fonts/Commissioner-VariableFont_wght.ttf');
+  src: url('../assets/fonts/Commissioner-Regular.ttf');
+  font-weight: 400;
+  font-display: swap;
 }
 
+@font-face {
+  font-family: 'Commissioner';
+  src: url('../assets/fonts/Commissioner-Medium.ttf');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Commissioner';
+  src: url('../assets/fonts/Commissioner-Bold.ttf');
+  font-weight: 700;
+  font-display: swap;
+}
+
+// Main structure
 body {
-  font-family: 'Commissioner', sans-serif;
+  font-family: $text-family
 }
 
 .global {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  color: vars.$text;
+  background-color: hsl(0, 0%, 98%);
+  color: $text;
 }
 
 .content {
+  position: relative;
+  z-index: 1;
+  top: -56px;
+  max-width: 327px;
   padding: 0;
+  margin: 0 auto;
+
+  // Content main wrappers
+  &__wrapper {
+    background-color: white;
+    padding: $spacer*1.5;
+    margin-bottom: $spacer*1.5;
+    border-radius: 8px;
+    border: 1px solid $light-gray;
+  }
+
+  // Buttons
+  &__button {
+    background-color: $primary-moderate;
+    border: none;
+    color: $white;
+    font-weight: 700;
+    border-radius: 33px;
+
+    &:hover {
+      background-color: $primary-dark;
+    }
+
+  }
 }
 
 .footer {
-  margin-top: auto;
+  position: relative;
+  bottom: 0;
 }
+
+// Texts
+h1, h2, h3 {
+  color: $black;
+  font-weight: 700;
+}
+
+p {
+  font-size: $text-size-mobile;
+  font-weight: 400;
+  color: $text;
+}
+

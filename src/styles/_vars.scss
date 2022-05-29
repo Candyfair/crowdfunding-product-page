@@ -6,12 +6,17 @@ $desktop-min: 768px; // min-width for tablet and desktop
 $primary-moderate: hsl(176, 50%, 47%);
 $primary-dark: hsl(176, 72%, 28%);
 $black: hsl(0, 0%, 0%);
+$white: hsl(0, 0%, 100%);
 $neutral-gray: hsl(0, 0%, 48%);
+$light-gray: hsl(0, 0%, 90%);
+$background: 	hsl(0, 0%, 98%);
 
 // Typography
-$text: hsl(0, 0%, 0%);
-$font-size: 1rem;
-$font-family: 'Commissioner', sans-serif;
+$title: hsl(0, 0%, 0%);
+$text: hsl(0, 0%, 48%);
+$text-size-mobile: 0.9rem;
+$text-size-desktop: 1rem;
+$text-family: 'Commissioner', sans-serif;
 
 // Spacing
 $spacer: 16px; // 24 = x1.5 | 32 = x2 | 48 = x3 | 56 = x3.5

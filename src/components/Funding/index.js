@@ -1,7 +1,7 @@
 import './style.scss';
 
 const Funding = () => (
-  <section>
+  <section className="content__wrapper funding">
     <div>
       <div>$xxx</div>
       <div>of $100,000 backed</div>

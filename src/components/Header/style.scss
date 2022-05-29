@@ -1,0 +1,25 @@
+@import '../../styles/vars';
+
+.header {
+
+  &__image {
+    // position: absolute;
+  } 
+
+  &__logo, &__menu {
+    top: $spacer*2;
+  }
+
+  &__logo {
+    position: absolute;
+    z-index: 1;
+    left: $spacer*1.5;
+  }
+
+  &__menu {
+    position: absolute;
+    z-index: 1;
+    right: $spacer*1.5;
+  }
+
+}

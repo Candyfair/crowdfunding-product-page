@@ -1,11 +1,24 @@
 import './style.scss';
 
+import Navigation from 'src/components/Navigation';
+
+// Import images
+import logo from '../../assets/images/logo.svg';
+import imgMobile from '../../assets/images/image-hero-mobile.jpg';
+
 const Header = () => (
-  <section>
-    <h1>Mastercraft Bamboo Monitor Riser</h1>
-    <p>A beautiful & handcrafted monitor stand to reduce neck and eye strains</p>
-    <button>Back this project</button>
-    <span>Bookmark</span>
+  <section className="header">
+    <div className="header__image">
+      <img src={imgMobile} alt="Mastercraft Bamboo Monitor Riser" />
+    </div>
+
+    <div className="header__logo">
+      <img src={logo} alt="Crowdfund logo" />
+    </div>
+
+    <div className="header__menu">
+      <Navigation />
+    </div>
   </section>
 );
 
