@@ -1,0 +1,26 @@
+@use 'reset';
+@use 'vars';
+
+@font-face {
+  font-family: 'Commissioner';
+  src: url('../assets/fonts/Commissioner-VariableFont_wght.ttf');
+}
+
+body {
+  font-family: 'Commissioner', sans-serif;
+}
+
+.global {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  color: vars.$text;
+}
+
+.content {
+  padding: 0;
+}
+
+.footer {
+  margin-top: auto;
+}
