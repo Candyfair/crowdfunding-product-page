@@ -5,7 +5,7 @@ import './style.scss';
 const Options = ({
   id, title, pledge, description, qty,
 }) => (
-  <article key={id} className="option">
+  <article key={id} className={`option${qty === 0 ? ' inactive' : ''}`}>
 
     <div className="option__pledge">
       <h3 className="option__pledge__title">{title}</h3>
@@ -19,7 +19,7 @@ const Options = ({
         <span className="option__count__quantity__left">{qty}</span> <span>left</span>
       </div>
       <br />
-      <button className="content__button option__select" type="submit">Select Reward</button>
+      <button className={`content__button option__select${qty === 0 ? ' inactive__button' : ''}`} type="submit">{ qty === 0 ? 'Out of Stock' : 'Select Reward' }</button>
     </div>
 
   </article>

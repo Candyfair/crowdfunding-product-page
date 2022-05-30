@@ -36,11 +36,17 @@
         margin-right: $spacer/2;
       }
     }
-
-  }
-
+  }  
   // Button
   &__select {
     padding: $spacer $spacer*2;
+  }
+}
+
+.inactive {
+  opacity: 0.50;
+
+  &__button {
+    background-color: $medium-gray;
   }
 }
