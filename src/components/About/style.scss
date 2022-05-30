@@ -1,0 +1,14 @@
+@import '../../styles/vars';
+
+.about {
+
+  &__title {
+    margin-top: $spacer;
+    margin-bottom: $spacer*1.5;
+    font-size: 1.1rem;
+  }
+
+  &__text {
+    margin-bottom: $spacer*1.5;
+  }
+}

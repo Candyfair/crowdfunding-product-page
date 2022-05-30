@@ -2,7 +2,6 @@
 @import '../../styles/mixins';
 
 .funding {
-  @include flexCenter(center, center, column);
 
   &__details {
     @include flexCenter(center, center, column);
@@ -42,8 +41,10 @@
       height: 100%;
       border-radius: 25px;
       background-color: $primary-moderate;
+    }
+    
+    &__backed {
       width: 75%;
-
     }
   }
 }
