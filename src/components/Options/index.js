@@ -5,16 +5,27 @@ import './style.scss';
 const Options = ({
   id, title, pledge, description, qty,
 }) => (
-
   <article key={id} className="option">
-    <h3 className="option__title">{title}</h3>
-    <span className="option__pledge">Pledge ${pledge} or more</span>
-    <p>{description}</p>
-    <span>{qty}</span> <span>left</span>
-    <button type="submit">Select Reward</button>
+
+    <div className="option__pledge">
+      <h3 className="option__pledge__title">{title}</h3>
+      <p className="option__pledge__amount">Pledge ${pledge} or more</p>
+    </div>
+
+    <p className="option__pledge__description">{description}</p>
+
+    <div className="option__count">
+      <div className="option__count__quantity">
+        <span className="option__count__quantity__left">{qty}</span> <span>left</span>
+      </div>
+      <br />
+      <button className="content__button option__select" type="submit">Select Reward</button>
+    </div>
+
   </article>
 );
 
+// PropTypes
 Options.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,

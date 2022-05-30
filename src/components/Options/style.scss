@@ -1,0 +1,46 @@
+@import '../../styles/vars';
+@import '../../styles/mixins';
+
+.option {
+  border: 1px solid $light-gray;
+  border-radius: 8px;
+  margin-bottom: $spacer*1.5;
+  padding: $spacer*1.5;
+  
+  &__pledge {
+    margin-bottom: $spacer*1.5;
+    
+    &__title {
+      font-size: $text-size-mobile;
+    }
+    
+    &__amount {
+      font-weight: 500;
+      color: $primary-moderate;
+    }
+    
+    &__description {
+      margin-bottom: $spacer*1.5;
+    }
+  }
+  
+  &__count {
+
+    &__quantity {
+      @include flexCenter(flex-start, center, row);
+
+      &__left {
+        font-size: 2rem;
+        font-weight: 700;
+        color: $black;
+        margin-right: $spacer/2;
+      }
+    }
+
+  }
+
+  // Button
+  &__select {
+    padding: $spacer $spacer*2;
+  }
+}
