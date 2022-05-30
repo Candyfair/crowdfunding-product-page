@@ -1,0 +1,50 @@
+@import '../../styles/vars';
+@import '../../styles/mixins';
+
+.funding {
+  @include flexCenter(center, center, column);
+
+  &__details {
+    @include flexCenter(center, center, column);
+    text-align: center;
+    margin-bottom: $spacer;
+    
+    &__numbers {
+      font-size: 2rem;
+      font-weight: 700;
+      color: $black;
+    }
+
+    &__desc {
+      margin-bottom: $spacer*1.5;
+    }
+
+    &__line {
+      border-bottom: 1px solid $medium-gray;
+      width: 80px;
+      margin: 0 auto;
+      margin-bottom: $spacer*1.5;
+    }
+  }
+
+  &__tracker {
+    width: 280px;
+    margin: 0 auto;
+    
+    box-sizing: content-box;
+    position: relative;
+    height: 12px;
+    background: $light-gray;
+    border-radius: 25px;
+
+    & > span {
+      display: block;
+      height: 100%;
+      border-radius: 25px;
+      background-color: $primary-moderate;
+      width: 75%;
+
+    }
+  }
+}
+

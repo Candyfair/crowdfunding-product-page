@@ -7,15 +7,15 @@ $primary-moderate: hsl(176, 50%, 47%);
 $primary-dark: hsl(176, 72%, 28%);
 $black: hsl(0, 0%, 0%);
 $white: hsl(0, 0%, 100%);
-$neutral-gray: hsl(0, 0%, 48%);
+$medium-gray: hsl(0, 0%, 59%);
 $light-gray: hsl(0, 0%, 90%);
 $background: 	hsl(0, 0%, 98%);
 
 // Typography
 $title: hsl(0, 0%, 0%);
 $text: hsl(0, 0%, 48%);
-$text-size-mobile: 0.9rem;
-$text-size-desktop: 1rem;
+$text-size-mobile: 0.9rem; // ~ 14px
+$text-size-desktop: 1rem; // 16px
 $text-family: 'Commissioner', sans-serif;
 
 // Spacing

@@ -1,4 +1,5 @@
 @import '../../styles/vars';
+@import '../../styles/mixins';
 
 .intro {
   text-align: center;
@@ -25,9 +26,7 @@
   }
 
   &__buttons {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    @include flexCenter(space-between, center, row);
     margin-bottom: $spacer;
     
     &__button {
@@ -37,7 +36,6 @@
     &__bookmark {
       width: 56px;
       height: 56px;
-      margin-left: 9px;
     }
   }
 
