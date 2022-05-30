@@ -12,12 +12,15 @@ const Header = () => (
       <img src={imgMobile} alt="Mastercraft Bamboo Monitor Riser" />
     </div>
 
-    <div className="header__logo">
-      <img src={logo} alt="Crowdfund logo" />
-    </div>
+    <div className="header__elements">
+      <div className="header__elements__logo">
+        <img src={logo} alt="Crowdfund logo" />
+      </div>
 
-    <div className="header__menu">
-      <Navigation />
+      <div className="header__elements__menu">
+        <Navigation />
+      </div>
+
     </div>
   </section>
 );
