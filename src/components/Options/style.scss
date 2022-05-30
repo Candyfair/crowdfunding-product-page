@@ -48,5 +48,10 @@
 
   &__button {
     background-color: $medium-gray;
+    cursor: default;
+
+    &:hover {
+      background-color: $medium-gray;
+    }
   }
 }
