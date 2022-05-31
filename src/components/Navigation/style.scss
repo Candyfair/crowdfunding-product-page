@@ -1,0 +1,38 @@
+@import '../../styles/vars';
+@import '../../styles/mixins';
+
+// DESKTOP
+@media only screen and (min-width: $desktop) {
+
+  .menu {
+    
+    &__desktop {
+      width: 225px;
+      
+      & ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        padding-top: 3px;
+        font-family: 'Varela Round', sans-serif;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 1.1rem;
+        display: block;
+      }
+      
+      & li {
+        margin-right: $spacer;
+        float:left; 
+        display: block;
+        color: $text;
+        border-radius: 20px;
+        text-align: center;
+        
+        & a:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+}
