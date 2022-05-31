@@ -14,10 +14,10 @@
         margin: 0;
         padding: 0;
         padding-top: 3px;
-        font-family: 'Varela Round', sans-serif;
-        text-transform: uppercase;
-        font-weight: 400;
-        font-size: 1.1rem;
+        // font-family: 'Varela Round', sans-serif;
+        // text-transform: uppercase;
+        // font-weight: 400;
+        // font-size: 1.1rem;
         display: block;
       }
       
@@ -25,13 +25,13 @@
         margin-right: $spacer;
         float:left; 
         display: block;
-        color: $text;
+        color: $white;
         border-radius: 20px;
         text-align: center;
         
-        & a:hover {
-          color: $primary;
-        }
+        // & a:hover {
+        //   color: $primary;
+        // }
       }
     }
   }
