@@ -23,7 +23,7 @@
   font-display: swap;
 }
 
-// MOBILE
+// --- MOBILE
 // Main structure
 body {
   font-family: $text-family;
@@ -31,14 +31,16 @@ body {
   color: $text;
 }
 
-// .global {
+// General rule for mobile display
+.desktop {
+  display: none;
+}
 
-// }
-
+// Content blocks
 .content {
   position: relative;
   z-index: 1;
-  top: -28px;
+  top: -66px;
   max-width: 327px;
   padding: 0;
   margin: 0 auto;
@@ -85,16 +87,20 @@ p {
   color: $text;
 }
 
-// General rule for mobile & tablet display
-@media only screen and (max-width: $mobile) {
-  .desktop {
-    display: none;
-  }
-}
-
-// General rule for desktop display
+// --- DESKTOP
 @media only screen and (min-width: $desktop) {
+  
+  // General rule for desktop display
   .mobile {
     display: none;
+  }
+
+  .desktop {
+    display: block;
+  }
+
+  .content {
+    top: -92px;
+    max-width: 730px;;
   }
 }

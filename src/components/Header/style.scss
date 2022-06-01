@@ -2,7 +2,6 @@
 @import '../../styles/mixins';
 
 .header {
-  // width: 100%;
   background: url('/src/assets/images/image-hero-mobile.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -10,41 +9,22 @@
 
   &__elements {
     @include flexCenter(space-between, center, row);
-
-    &__logo, &__menu {
-      top: $spacer*2;
-    }
-  
-    &__logo {
-      position: relative;
-      z-index: 1;
-      left: $spacer*1.5;
-    }
-  
-    &__menu {
-      position: relative;
-      z-index: 1;
-      right: $spacer*1.5;
-    }
+    padding: $spacer*1.5;
   }
 }
 
 // DESKTOP
 @media only screen and (min-width: $desktop) {
+
   .header {
-    width: 100%;
-
-    &__image {
-      width: 100%;
-
-      &__desktop {
-        width: 100%;
-        object-fit: cover;
-      }
-    } 
-
+    background: url('/src/assets/images/image-hero-desktop.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    
     &__elements {
-      max-width: 800px;
+      max-width: 1109px;
+      margin: 0 auto;
 
       &__logo {
         position: relative;

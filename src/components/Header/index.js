@@ -4,8 +4,6 @@ import Navigation from 'src/components/Navigation';
 
 // Import images
 import logo from '../../assets/images/logo.svg';
-// import imgMobile from '../../assets/images/image-hero-mobile.jpg';
-// import imgDesktop from '../../assets/images/image-hero-desktop.jpg';
 
 const Header = () => (
   <section className="header">
