@@ -33,7 +33,7 @@
         font-size: 2rem;
         font-weight: 700;
         color: $black;
-        margin-right: $spacer/2;
+        margin-right: calc($spacer / 2);
       }
     }
   }  
