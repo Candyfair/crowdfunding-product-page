@@ -49,3 +49,34 @@
   }
 }
 
+// --- DESKTOP
+@media only screen and (min-width: $desktop) {
+
+  .funding {
+    padding: $spacer*3;
+
+    &__details {
+      @include flexCenter(flex-start, center, row);
+      
+      &__texts {
+        @include flexCenter(flex-start, center, row);
+        text-align: left;
+      }
+
+      &__line {
+        border-bottom: none;
+        border-left: 1px solid $medium-gray;
+        height: 63px;
+        margin-left: 42px;
+        margin-right: 47px;
+        width: 0;
+      }
+    }
+    
+    &__tracker {
+      width: 634px;
+      margin-left: 0;
+    }
+  }
+}
+
