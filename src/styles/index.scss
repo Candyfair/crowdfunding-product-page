@@ -31,10 +31,6 @@ body {
   color: $text;
 }
 
-// General rule for mobile display
-.desktop {
-  display: none;
-}
 
 // Content blocks
 .content {
@@ -44,7 +40,7 @@ body {
   max-width: 327px;
   padding: 0;
   margin: 0 auto;
-
+  
   // Content main wrappers
   &__wrapper {
     background-color: white;
@@ -53,7 +49,7 @@ body {
     border-radius: 8px;
     border: 1px solid $light-gray;
   }
-
+  
   // Buttons
   &__button {
     background-color: $primary-moderate;
@@ -62,11 +58,11 @@ body {
     font-weight: 700;
     border-radius: 33px;
     cursor: pointer;
-
+    
     &:hover {
       background-color: $primary-dark;
     }
-
+    
   }
 }
 
@@ -91,16 +87,28 @@ p {
 @media only screen and (min-width: $desktop) {
   
   // General rule for desktop display
+  
+  // .desktop {
+    //   display: block;
+    // }
+    
+    .content {
+      top: -92px;
+      max-width: 730px;;
+    }
+  }
+  
+  
+// General rule for mobile display
+@media only screen and (max-width: $mobile) {
+  .desktop {
+    display: none;
+  } 
+}
+  
+// General rule for desktop display
+@media only screen and (min-width: $desktop) {
   .mobile {
     display: none;
-  }
-
-  .desktop {
-    display: block;
-  }
-
-  .content {
-    top: -92px;
-    max-width: 730px;;
   }
 }

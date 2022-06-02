@@ -24,18 +24,4 @@
   &__text {
     margin-bottom: $spacer*1.5;
   }
-
-  &__buttons {
-    @include flexCenter(space-between, center, row);
-    margin-bottom: $spacer;
-    
-    &__button {
-      padding: 17px 42px;
-    }
-
-    &__bookmark {
-      width: 56px;
-      height: 56px;
-    }
-  }
 }

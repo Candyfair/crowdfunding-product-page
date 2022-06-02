@@ -1,0 +1,45 @@
+@import '../../styles/vars';
+@import '../../styles/mixins';
+
+.intro {
+  &__buttons {
+    @include flexCenter(space-between, center, row);
+    margin-bottom: $spacer;
+    
+    &__button {
+      padding: 17px 42px;
+    }
+
+    &__bookmark {
+      width: 56px;
+      height: 56px;
+    }
+  }
+}
+
+// --- DESKTOP
+@media only screen and (min-width: $desktop) {
+  .intro {
+
+    &__buttons {
+
+      &__bookmark-desktop {
+        width: 174px;
+        background-color: $light-gray;
+        border-radius: 25px;
+        @include flexCenter(space-between, center, row);
+      }
+
+      &__bookmark {
+        &__img {
+          display: inline-block;
+        }
+
+        &__text {
+          font-weight: 700;
+          margin-right: $spacer*1.5;
+        }
+      }
+    }
+  }
+}
