@@ -17,6 +17,19 @@
   }
 }
 
+.icon {
+  width: 56px;
+  height: 56px;
+  display: inline-block;
+  background-size: cover;
+  cursor: pointer;
+  
+  &-bookmark {
+    background-image: url('../../assets/images/icon-bookmark.svg');
+  }
+}
+
+
 // --- DESKTOP
 @media only screen and (min-width: $desktop) {
   .intro {
@@ -27,14 +40,12 @@
         width: 174px;
         background-color: $light-gray;
         border-radius: 25px;
+        cursor: pointer;
         @include flexCenter(space-between, center, row);
+
       }
 
       &__bookmark {
-        &__img {
-          display: inline-block;
-        }
-
         &__text {
           font-weight: 700;
           margin-right: $spacer*1.5;
@@ -43,3 +54,8 @@
     }
   }
 }
+
+.intro__buttons__bookmark-desktop:hover .icon {
+  fill: hsl(0, 0%, 44%);
+}
+
