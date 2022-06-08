@@ -35,6 +35,8 @@
   .intro {
 
     &__buttons {
+      padding-left: $spacer*1.5;
+      padding-right: $spacer*1.5;
 
       &__bookmark-desktop {
         width: 174px;
@@ -42,7 +44,6 @@
         border-radius: 25px;
         cursor: pointer;
         @include flexCenter(space-between, center, row);
-
       }
 
       &__bookmark {
