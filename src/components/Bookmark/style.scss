@@ -56,7 +56,36 @@
   }
 }
 
-.intro__buttons__bookmark-desktop:hover .icon {
+.intro__buttons__bookmark-desktop:hover .icon-circle {
   fill: hsl(0, 0%, 44%);
+}
+
+// Bookmarked
+.selected {
+  background-color: $primary-dark-transparent;
+  width: 190px;
+
+  // Circle of the icon
+  & .icon-circle {
+    fill: $primary-dark;
+  }
+
+  &:hover .icon-circle {
+    fill: $primary-moderate;
+  }
+
+  // Tag shape inside the circle
+  & .icon-path {
+    fill: $white;
+  }
+
+  // Text
+  & .intro__buttons__bookmark__text {
+    color: $primary-dark;
+  }
+
+  &:hover .intro__buttons__bookmark__text {
+    color: $primary-moderate;
+  }
 }
 

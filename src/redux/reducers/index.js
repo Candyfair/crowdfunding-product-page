@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import counter from './counter';
+import bookmark from './bookmark';
 
 export default combineReducers({
-  counter,
+  bookmark,
 });
