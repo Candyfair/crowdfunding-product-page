@@ -7,6 +7,7 @@ import {
   Intro,
   Funding,
   About,
+  ModalDisplay,
 } from './components';
 
 // Import data
@@ -30,6 +31,8 @@ const App = () => {
       <footer className="footer">
         <Footer />
       </footer>
+
+      <ModalDisplay />
     </div>
   );
 };

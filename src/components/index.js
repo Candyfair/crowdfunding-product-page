@@ -3,6 +3,7 @@ import Footer from 'src/components/Footer';
 import Intro from 'src/components/Intro';
 import Funding from 'src/components/Funding';
 import About from 'src/components/About';
+import ModalDisplay from 'src/components/ModalDisplay';
 
 export {
   Header,
@@ -10,4 +11,5 @@ export {
   Intro,
   Funding,
   About,
+  ModalDisplay,
 };
