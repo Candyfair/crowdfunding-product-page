@@ -29,6 +29,17 @@
   }
 }
 
+.selected {
+
+  & .icon-circle {
+    fill: $primary-dark;
+  }
+
+  & .icon-path {
+    fill: $white;
+  }
+}
+
 
 // --- DESKTOP
 @media only screen and (min-width: $desktop) {
@@ -61,7 +72,7 @@
 }
 
 // Bookmarked
-.selected {
+.selected-desktop {
   background-color: $primary-dark-transparent;
   width: 190px;
 

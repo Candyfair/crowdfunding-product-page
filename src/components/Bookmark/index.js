@@ -17,11 +17,11 @@ const Bookmark = () => {
 
       {/* Mobile */}
       <div className={`intro__buttons__bookmark mobile${bookmark ? ' selected' : ''}`} onClick={handleBookmarkChange}>
-        <span className="icon icon-bookmark"></span>
+        <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg"><g fill="none" fillRule="evenodd"><circle fill="#2F2F2F" cx="28" cy="28" r="28" className="icon-circle" /><path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z" className="icon-path" /></g></svg>
       </div>
 
       {/* Desktop */}
-      <div className={`intro__buttons__bookmark-desktop desktop${bookmark ? ' selected' : ''}`} onClick={handleBookmarkChange}>
+      <div className={`intro__buttons__bookmark-desktop desktop${bookmark ? ' selected-desktop' : ''}`} onClick={handleBookmarkChange}>
         <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg"><g fill="none" fillRule="evenodd"><circle fill="#2F2F2F" cx="28" cy="28" r="28" className="icon-circle" /><path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z" className="icon-path" /></g></svg>
 
         <span className="intro__buttons__bookmark__text">Bookmark{`${bookmark ? 'ed' : ''}`}</span>
