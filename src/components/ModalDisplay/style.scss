@@ -1,6 +1,7 @@
 @import '../../styles/vars';
 @import '../../styles/mixins';
 
+// Modal's background
 .modal {
   position: fixed;
   top: 0;
@@ -9,13 +10,15 @@
   height: 100%;
   background-color: $modal-background;
   z-index: 1;
+  overflow-y: auto;
 
+  // Modal's content
   &__wrapper {
     @include flexCenter(center, center, column);
-    position: fixed;
-    top: 180px;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
+    margin-left: $spacer*1.5;
+    margin-right: $spacer*1.5;
+    margin-top: 120px;
     background-color: $white;
     min-width: 327px;
     padding: $spacer*2 $spacer*1.5;

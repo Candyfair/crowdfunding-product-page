@@ -16,6 +16,7 @@ import data from './data/options';
 // == Composant
 const App = () => {
   const { options } = data;
+
   return (
     <div className="global">
       <header>
@@ -32,7 +33,7 @@ const App = () => {
         <Footer />
       </footer>
 
-      <ModalDisplay />
+      <ModalDisplay pledges={options} />
     </div>
   );
 };
