@@ -21,16 +21,30 @@ const BackProject = ({ pledges }) => {
       </div>
       <p className="pledge__description">Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
 
-      {
-        pledges.map((pledgeObj) => (
-          <>
-            <Pledge
-              key={pledgeObj.id}
-              {...pledgeObj}
-            />
-          </>
-        ))
-      }
+      <form action="">
+        {/* Pledge with no reward */}
+        <article className="pledge__wrapping">
+          <div className="pledge__reward">
+            <input type="radio" className="pledge__reward__radio-button" />
+            <h2 className="pledge__reward__pledge-title">Pledge with no reward</h2>
+          </div>
+
+          <p className="pledge__description">Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.</p>
+        </article>
+
+        {/* Other pledges */}
+        {
+          pledges.map((pledgeObj) => (
+            <>
+              <Pledge
+                key={pledgeObj.id}
+                {...pledgeObj}
+              />
+            </>
+          ))
+        }
+
+      </form>
 
     </section>
   );

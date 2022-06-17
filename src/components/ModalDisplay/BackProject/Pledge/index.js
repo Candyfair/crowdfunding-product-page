@@ -4,18 +4,21 @@ import './style.scss';
 const Pledge = ({
   id, title, pledge, description, qty,
 }) => (
-  <article key={id}>
+  <article key={id} className={`pledge__wrapping${qty === 0 ? ' inactive' : ''}`}>
 
-    <div>
-      <h3>{title}</h3>
-      <p>Pledge ${pledge} or more</p>
+    <div className="pledge__reward">
+      <input type="radio" className="pledge__reward__radio-button" />
+      <div>
+        <h2 className="pledge__reward__pledge-title">{title}</h2>
+        <p className="pledge__reward__pledge-subtitle">Pledge ${pledge} or more</p>
+      </div>
     </div>
 
-    <p>{description}</p>
+    <p className="pledge__description">{description}</p>
 
     <div>
       <div>
-        <span>{qty}</span> <span>left</span>
+        <span className="pledge__reward__qty">{qty}</span> <span>left</span>
       </div>
       <br />
     </div>

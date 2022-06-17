@@ -4,6 +4,14 @@
 .pledge {
   @include flexCenter(center, center, column);
 
+  &__wrapping {
+    border: 1px solid $light-gray;
+    border-radius: 8px;
+    margin-bottom: $spacer;
+    padding: $spacer*1.5;
+    padding-bottom: 0;
+  }
+
   &__header {
     @include flexCenter(space-between, center, row);
     width: 100%;
@@ -18,6 +26,33 @@
   &__description {
     font-size: 0.9rem;
     margin-bottom: $spacer*1.5;
+  }
+
+  &__reward {
+    @include flexCenter(flex-start, center, row);
+    margin-bottom: $spacer*1.5;
+
+    &__radio-button {
+      width: 24px;
+      height: 24px;
+      margin-right: $spacer;
+    }
+
+    &__pledge-title {
+      font-size: 0.9rem;
+    }
+
+    &__pledge-subtitle {
+      font-size: 0.87rem;
+      color: $primary-moderate;
+    }
+
+    &__qty {
+      font-size: 1.2rem;
+      color: $black;
+      font-weight: 700;
+      margin-right: calc($spacer / 2);
+    }
   }
 
 }
