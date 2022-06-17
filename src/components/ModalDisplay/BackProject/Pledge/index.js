@@ -7,7 +7,13 @@ const Pledge = ({
   <article key={id} className={`pledge__wrapping${qty === 0 ? ' inactive' : ''}`}>
 
     <div className="pledge__reward">
-      <input type="radio" className="pledge__reward__radio-button" />
+      <input
+        type="radio"
+        className="pledge__reward__radio-button"
+        name="pledge"
+        id={`pledge${id}`}
+        disabled={qty === 0}
+      />
       <div>
         <h2 className="pledge__reward__pledge-title">{title}</h2>
         <p className="pledge__reward__pledge-subtitle">Pledge ${pledge} or more</p>

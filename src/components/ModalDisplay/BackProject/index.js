@@ -25,7 +25,12 @@ const BackProject = ({ pledges }) => {
         {/* Pledge with no reward */}
         <article className="pledge__wrapping">
           <div className="pledge__reward">
-            <input type="radio" className="pledge__reward__radio-button" />
+            <input
+              type="radio"
+              className="pledge__reward__radio-button"
+              name="pledge"
+              id="pledge0"
+            />
             <h2 className="pledge__reward__pledge-title">Pledge with no reward</h2>
           </div>
 
