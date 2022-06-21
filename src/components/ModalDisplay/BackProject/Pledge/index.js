@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { setPledge } from '../../../../redux/actions/pledge';
+import { setChecked, setPledge } from '../../../../redux/actions/pledge';
 
 import './style.scss';
 
@@ -9,12 +9,17 @@ const Pledge = ({
 }) => {
   const dispatch = useDispatch();
 
-  // Get pledge amount
+  // Get pledge amount and checked status
   const { amount } = useSelector((state) => state.pledge);
   console.log('amount:', amount);
 
+  const handleChecked = () => {
+    dispatch(setChecked(id));
+  };
+
   const handlePledge = () => {
     dispatch(setPledge(pledge));
+    handleChecked();
   };
 
   return (
@@ -42,6 +47,20 @@ const Pledge = ({
           <span className="pledge__reward__qty">{qty}</span> <span>left</span>
         </div>
         <br />
+      </div>
+
+      {/* Hidden form */}
+      <div className={`pledge__details${amount === pledge ? ' show' : ''}`}>
+        <p className="pledge__details__title">Enter your pledge</p>
+
+        <div className="pledge__details__enter">
+          <span className="input-symbol-dollar">
+            <input className="pledge__details__enter__input" type="text" name="pledged" id="pledged" />
+          </span>
+
+          <button className="content__button pledge__button" type="submit">Continue</button>
+        </div>
+
       </div>
 
     </article>

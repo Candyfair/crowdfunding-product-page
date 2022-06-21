@@ -6,7 +6,7 @@ import close from 'src/assets/images/icon-close-modal.svg';
 
 import Pledge from './Pledge';
 import { setModal } from '../../../redux/actions/modals';
-import { setPledge } from '../../../redux/actions/pledge';
+import { setChecked, setPledge } from '../../../redux/actions/pledge';
 
 const BackProject = ({ pledges }) => {
   const dispatch = useDispatch();
@@ -15,11 +15,16 @@ const BackProject = ({ pledges }) => {
   const { element } = useSelector((state) => state.modals);
 
   // Get pledge amount
-  const { amount } = useSelector((state) => state.pledge);
-  console.log('amount:', amount);
+  const { checked, amount } = useSelector((state) => state.pledge);
+  console.log(`checked: ${checked}, amount: ${amount}`);
+
+  const handleChecked = () => {
+    dispatch(setChecked('noreward'));
+  };
 
   const handlePledge = (e) => {
-    dispatch(setPledge(e.target.value));
+    dispatch(setPledge(e.target.value, 30));
+    handleChecked();
   };
 
   // Show or hide modal
@@ -35,7 +40,7 @@ const BackProject = ({ pledges }) => {
 
       <form action="">
         {/* Pledge with no reward */}
-        <article className={`pledge__wrapping${amount === 'noreward' ? ' checked' : ''}`}>
+        <article className={`pledge__wrapping${checked === 'noreward' ? ' checked' : ''}`}>
 
           <div className="pledge__reward">
             <input
@@ -44,7 +49,7 @@ const BackProject = ({ pledges }) => {
               name="pledge"
               id="noreward"
               value="noreward"
-              checked={amount === 'noreward'}
+              checked={checked === 'noreward'}
               onChange={handlePledge}
 
             />
@@ -54,7 +59,7 @@ const BackProject = ({ pledges }) => {
           <p className="pledge__description">Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.</p>
 
           {/* Hidden form */}
-          <div className="pledge__details">
+          <div className={`pledge__details${checked === 'noreward' ? ' show' : ''}`}>
             <p className="pledge__details__title">Enter your pledge</p>
 
             <div className="pledge__details__enter">

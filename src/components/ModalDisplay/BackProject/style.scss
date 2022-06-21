@@ -60,7 +60,7 @@
   &__details {
     @include flexCenter(center, center, column);
 
-    display: block;
+    display: none;
     border-top: 1px solid $light-gray;
     padding: $spacer*1.5;
     margin-left: -$spacer*1.5;
@@ -109,4 +109,9 @@
 // Selected option
 .checked {
   border: 2px solid $primary-moderate;
+}
+
+// Show and hide Enter pledge div
+.show {
+  display: block;
 }

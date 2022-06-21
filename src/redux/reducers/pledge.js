@@ -1,7 +1,8 @@
-import { SET_PLEDGE } from '../actions/pledge';
+import { SET_CHECKED, SET_PLEDGE } from '../actions/pledge';
 
 const initialState = {
-  amount: 'noreward',
+  checked: 'noreward',
+  amount: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -10,6 +11,12 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         amount: action.payload,
+      };
+
+    case SET_CHECKED:
+      return {
+        ...state,
+        checked: action.value,
       };
 
     default:
