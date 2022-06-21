@@ -6,11 +6,23 @@ import close from 'src/assets/images/icon-close-modal.svg';
 
 import Pledge from './Pledge';
 import { setModal } from '../../../redux/actions/modals';
+import { setPledge } from '../../../redux/actions/pledge';
 
 const BackProject = ({ pledges }) => {
-  const { element } = useSelector((state) => state.modals);
   const dispatch = useDispatch();
 
+  // Modal status
+  const { element } = useSelector((state) => state.modals);
+
+  // Get pledge amount
+  const { amount } = useSelector((state) => state.pledge);
+  console.log('amount:', amount);
+
+  const handlePledge = (e) => {
+    dispatch(setPledge(e.target.value));
+  };
+
+  // Show or hide modal
   if (element !== 'pledge') return null;
 
   return (
@@ -23,13 +35,18 @@ const BackProject = ({ pledges }) => {
 
       <form action="">
         {/* Pledge with no reward */}
-        <article className="pledge__wrapping">
+        <article className={`pledge__wrapping${amount === 'noreward' ? ' checked' : ''}`}>
+
           <div className="pledge__reward">
             <input
               type="radio"
               className="pledge__reward__radio-button"
               name="pledge"
-              id="pledge0"
+              id="noreward"
+              value="noreward"
+              checked={amount === 'noreward' ? true : false}
+              onChange={handlePledge}
+
             />
             <h2 className="pledge__reward__pledge-title">Pledge with no reward</h2>
           </div>

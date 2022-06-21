@@ -55,5 +55,8 @@
       margin-right: calc($spacer / 2);
     }
   }
+}
 
+.checked {
+  border: 2px solid $primary-moderate;
 }
