@@ -44,7 +44,7 @@ const BackProject = ({ pledges }) => {
               name="pledge"
               id="noreward"
               value="noreward"
-              checked={amount === 'noreward' ? true : false}
+              checked={amount === 'noreward'}
               onChange={handlePledge}
 
             />
@@ -52,6 +52,21 @@ const BackProject = ({ pledges }) => {
           </div>
 
           <p className="pledge__description">Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.</p>
+
+          {/* Hidden form */}
+          <div className="pledge__details">
+            <p className="pledge__details__title">Enter your pledge</p>
+
+            <div className="pledge__details__enter">
+              <span className="input-symbol-dollar">
+                <input className="pledge__details__enter__input" type="text" name="pledged" id="pledged" />
+              </span>
+
+              <button className="content__button pledge__button" type="submit">Continue</button>
+            </div>
+
+          </div>
+
         </article>
 
         {/* Other pledges */}

@@ -55,8 +55,58 @@
       margin-right: calc($spacer / 2);
     }
   }
+
+  // Hidden form
+  &__details {
+    @include flexCenter(center, center, column);
+
+    display: block;
+    border-top: 1px solid $light-gray;
+    padding: $spacer*1.5;
+    margin-left: -$spacer*1.5;
+    margin-right: -$spacer*1.5;
+
+    &__title {
+      text-align: center;
+      font-size: 0.9rem;
+      margin-bottom: $spacer;
+    }
+
+    &__enter {
+      @include flexCenter(space-between, center, row);
+      width: 100%;
+      
+     &__input {
+        border: 1px solid $light-gray;
+        border-radius: 33px;
+        padding: $spacer $spacer*1.5 ;
+        width: 100px;
+      } 
+    }
+  }
+
+  // Style buttons
+  &__button {
+    padding: $spacer $spacer*1.5 ;
+  }
 }
 
+// Dollar symbol inside input field
+.input-symbol-dollar {
+  position: relative;
+  color: hsla(0, 0%, 0%, 0.25);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.input-symbol-dollar:before {
+  position: absolute;
+  top: $spacer;
+  content:"$";
+  left: $spacer*1.5;
+}
+
+// Selected option
 .checked {
   border: 2px solid $primary-moderate;
 }
