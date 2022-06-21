@@ -1,16 +1,23 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { setBookmark } from '../../redux/actions/bookmark';
 import { setModal } from '../../redux/actions/modals';
+import { setPledge } from '../../redux/actions/pledge';
 
 import './style.scss';
 
 const Bookmark = () => {
   const { bookmark } = useSelector((state) => state.bookmark);
-  const { modal } = useSelector((state) => state.modals);
   const dispatch = useDispatch();
 
+  // Add and remove from bookmarks
   const handleBookmarkChange = () => {
     dispatch(setBookmark(!bookmark));
+  };
+
+  // Open the modal and select the 'No reward' option
+  const openModalNoReward = () => {
+    dispatch(setPledge('noreward'));
+    dispatch(setModal(true, 'pledge'));
   };
 
   return (
@@ -18,7 +25,7 @@ const Bookmark = () => {
       <button
         type="button"
         className="content__button intro__buttons__button"
-        onClick={() => dispatch(setModal(true, 'pledge'))}
+        onClick={openModalNoReward}
       >
         Back this project
       </button>
