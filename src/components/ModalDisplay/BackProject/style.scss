@@ -81,6 +81,10 @@
         border-radius: 33px;
         padding: $spacer $spacer*1.5 ;
         width: 100px;
+        
+        &:focus {
+          outline: solid 1px $primary-moderate;
+        }
       } 
     }
   }
@@ -97,6 +101,10 @@
   color: hsla(0, 0%, 0%, 0.25);
   font-size: 0.9rem;
   font-weight: 700;
+}
+
+.input-symbol-dollar input {
+  padding-left: 41px;
 }
 
 .input-symbol-dollar:before {

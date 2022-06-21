@@ -10,8 +10,7 @@ const Pledge = ({
   const dispatch = useDispatch();
 
   // Get pledge amount and checked status
-  const { amount } = useSelector((state) => state.pledge);
-  console.log('amount:', amount);
+  const { amount, checked } = useSelector((state) => state.pledge);
 
   const handleChecked = () => {
     dispatch(setChecked(id));
@@ -22,8 +21,13 @@ const Pledge = ({
     handleChecked();
   };
 
+  // Controlled inputs
+  const handleChange = (event) => {
+    dispatch(setPledge(event.target.value));
+  };
+
   return (
-    <article key={id} className={`pledge__wrapping${qty === 0 ? ' inactive' : ''}${amount === pledge ? ' checked' : ''}`}>
+    <article key={id} className={`pledge__wrapping${qty === 0 ? ' inactive' : ''}${checked === id ? ' checked' : ''}`}>
 
       <div className="pledge__reward">
         <input
@@ -50,12 +54,19 @@ const Pledge = ({
       </div>
 
       {/* Hidden form */}
-      <div className={`pledge__details${amount === pledge ? ' show' : ''}`}>
+      <div className={`pledge__details${checked === id ? ' show' : ''}`}>
         <p className="pledge__details__title">Enter your pledge</p>
 
         <div className="pledge__details__enter">
           <span className="input-symbol-dollar">
-            <input className="pledge__details__enter__input" type="text" name="pledged" id="pledged" />
+            <input
+              className="pledge__details__enter__input"
+              type="text"
+              name="pledged"
+              id="pledged"
+              value={amount}
+              onChange={handleChange}
+            />
           </span>
 
           <button className="content__button pledge__button" type="submit">Continue</button>
@@ -65,7 +76,7 @@ const Pledge = ({
 
     </article>
   );
-}
+};
 
 // PropTypes
 Pledge.propTypes = {
