@@ -9,9 +9,7 @@
 @media only screen and (min-width: $desktop) {
 
   .pledge {
-
     &__reward {
-
       &__header {
         @include flexCenter(space-between, center, row);
         width: 530px;
@@ -28,8 +26,13 @@
       &__pledge-subtitle {
         font-size: 1rem;
         margin-left: $spacer;
+
+        &__checked {
+          font-weight: 700;
+        }
       }
     }
   }
+
 
 }

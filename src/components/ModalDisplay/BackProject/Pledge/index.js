@@ -41,7 +41,7 @@ const Pledge = ({
         <div className="pledge__reward__header">
           <div className="pledge__reward__header__titles">
             <label htmlFor={id} className="pledge__reward__pledge-title">{title}</label>
-            <p className="pledge__reward__pledge-subtitle">Pledge ${pledge} or more</p>
+            <p className={`pledge__reward__pledge-subtitle${checked === id ? ' pledge__reward__pledge-subtitle__checked' : ''}`}>Pledge ${pledge} or more</p>
           </div>
 
           {/* Quantity left (desktop) */}
