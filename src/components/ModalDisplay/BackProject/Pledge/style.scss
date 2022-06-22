@@ -1,3 +1,35 @@
+@import '../../../../styles/vars';
+@import '../../../../styles/mixins';
+
 .inactive {
   opacity: 0.50;
+}
+
+// ---DESKTOP
+@media only screen and (min-width: $desktop) {
+
+  .pledge {
+
+    &__reward {
+
+      &__header {
+        @include flexCenter(space-between, center, row);
+        width: 530px;
+
+        &__titles {
+          @include flexCenter(flex-start, center, row);
+        }
+      }
+
+      &__pledge-title:hover + &__pledge-subtitle {
+        font-weight: 700;
+      }
+
+      &__pledge-subtitle {
+        font-size: 1rem;
+        margin-left: $spacer;
+      }
+    }
+  }
+
 }

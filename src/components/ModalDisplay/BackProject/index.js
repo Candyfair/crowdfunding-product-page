@@ -23,7 +23,7 @@ const BackProject = ({ pledges }) => {
   };
 
   const handlePledge = (e) => {
-    dispatch(setPledge(e.target.value, 30));
+    dispatch(setPledge(e.target.value));
     handleChecked();
   };
 
@@ -57,10 +57,10 @@ const BackProject = ({ pledges }) => {
               onChange={handlePledge}
 
             />
-            <h2 className="pledge__reward__pledge-title">Pledge with no reward</h2>
+            <label htmlFor="noreward" className="pledge__reward__pledge-title">Pledge with no reward</label>
           </div>
 
-          <p className="pledge__description">Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.</p>
+          <p className="pledge__reward__text">Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.</p>
 
           {/* Hidden form */}
           <div className={`pledge__details${checked === 'noreward' ? ' show' : ''}`}>

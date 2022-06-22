@@ -7,7 +7,7 @@
   &__wrapping {
     border: 1px solid $light-gray;
     border-radius: 8px;
-    margin-bottom: $spacer;
+    margin-bottom: $spacer*1.5;
     padding: $spacer*1.5;
     padding-bottom: 0;
   }
@@ -37,15 +37,23 @@
       height: 24px;
       margin-right: $spacer;
       border: solid $light-gray;
+      cursor: pointer;
     }
 
     &__pledge-title {
       font-size: 0.9rem;
+      font-weight: 700;
+      color: $black;
     }
 
     &__pledge-subtitle {
       font-size: 0.87rem;
       color: $primary-moderate;
+    }
+
+    &__text {
+      font-size: 0.9rem;
+      margin-bottom: $spacer*1.5;
     }
 
     &__qty {
@@ -128,10 +136,11 @@
 @media only screen and (min-width: $desktop) {
 
   .pledge {
-    @include flexCenter(flex-start, center, column);
+    @include flexCenter(center, flex-start, column);
 
     &__header {
       position: relative;
+      margin-bottom: $spacer;
 
       &__title {
         font-size: 1.5rem;
@@ -147,7 +156,29 @@
           opacity: 1;
         }
       }
+    }
 
+    &__description {
+      font-size: 1rem;
+      margin-bottom: $spacer*2;
+    }
+
+    &__reward {
+      margin-bottom: $spacer;
+
+      &__pledge-title {
+        font-size: 1rem;
+        cursor: pointer;
+
+        &:hover {
+          color: $primary-moderate;
+        }
+      }
+
+      &__text {
+        font-size: 0.94rem;
+        margin-left: $spacer*2.5;
+      }
     }
   }
 

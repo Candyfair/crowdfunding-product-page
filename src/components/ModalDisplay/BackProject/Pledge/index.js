@@ -38,15 +38,24 @@ const Pledge = ({
           disabled={qty === 0}
           onChange={handlePledge}
         />
-        <div>
-          <h2 className="pledge__reward__pledge-title">{title}</h2>
-          <p className="pledge__reward__pledge-subtitle">Pledge ${pledge} or more</p>
+        <div className="pledge__reward__header">
+          <div className="pledge__reward__header__titles">
+            <label htmlFor={id} className="pledge__reward__pledge-title">{title}</label>
+            <p className="pledge__reward__pledge-subtitle">Pledge ${pledge} or more</p>
+          </div>
+
+          {/* Quantity left (desktop) */}
+          <div className="desktop">
+            <span className="pledge__reward__qty">{qty}</span> <span>left</span>
+          </div>
+
         </div>
       </div>
 
-      <p className="pledge__description">{description}</p>
+      <p className="pledge__reward__text">{description}</p>
 
-      <div>
+      {/* Quantity left (mobile) */}
+      <div className="mobile">
         <div>
           <span className="pledge__reward__qty">{qty}</span> <span>left</span>
         </div>
