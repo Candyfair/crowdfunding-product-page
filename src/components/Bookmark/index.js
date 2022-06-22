@@ -14,9 +14,9 @@ const Bookmark = () => {
     dispatch(setBookmark(!bookmark));
   };
 
-  // Open the modal and select the 'No reward' option
-  const openModalNoReward = () => {
-    dispatch(setPledge('noreward'));
+  // Open the Pledge modal with no option selected
+  const openModalNoOption = () => {
+    dispatch(setPledge(''));
     dispatch(setModal(true, 'pledge'));
   };
 
@@ -25,7 +25,7 @@ const Bookmark = () => {
       <button
         type="button"
         className="content__button intro__buttons__button"
-        onClick={openModalNoReward}
+        onClick={openModalNoOption}
       >
         Back this project
       </button>

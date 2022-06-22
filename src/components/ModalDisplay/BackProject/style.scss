@@ -123,3 +123,32 @@
 .show {
   display: block;
 }
+
+// ---DESKTOP
+@media only screen and (min-width: $desktop) {
+
+  .pledge {
+    @include flexCenter(flex-start, center, column);
+
+    &__header {
+      position: relative;
+
+      &__title {
+        font-size: 1.5rem;
+      }
+
+      &__close {
+        position: relative;
+        top: -$spacer;
+        right: -$spacer;
+        cursor: pointer;
+
+        &__svg:hover {
+          opacity: 1;
+        }
+      }
+
+    }
+  }
+
+}

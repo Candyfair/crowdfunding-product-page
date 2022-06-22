@@ -1,7 +1,7 @@
 import { SET_CHECKED, SET_PLEDGE } from '../actions/pledge';
 
 const initialState = {
-  checked: 'noreward',
+  checked: '',
   amount: '',
 };
 
