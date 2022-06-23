@@ -1,13 +1,65 @@
 @import '../../../styles/vars';
 @import '../../../styles/mixins';
 
+.confirmation {
+  @include flexCenter(center, center, column);
 
+  &__img-wrapper {
+    margin-top: calc($spacer/2);
+    margin-bottom: $spacer*1.5;
+  }
+
+  &__title {
+    font-size: 1.2rem;
+    margin-bottom: $spacer*1.5;
+  }
+
+  &__text {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-bottom: $spacer *2;
+  }
+
+  &__button {
+    padding: $spacer $spacer*2;
+    margin-bottom: $spacer;
+  }
+}
 
 // ---DESKTOP
 @media only screen and (min-width: $desktop) {
 
+  // Adjust size of the modal wrapper
   .thankyou {
     width: 540px;
   }
+
+  .confirmation {
+
+    &__img-wrapper {
+      margin-top: 0;
+      margin-bottom: $spacer*2;
+    }
+
+    &__img {
+      width: 90px;
+      height: 90px;
+    }
+
+    &__title {
+      font-size: 1.5rem;
+      margin-bottom: $spacer;
+    }
+
+    &__text {
+      font-size: 1rem;
+      line-height: 2;
+    }
+
+    &__button {
+      margin-bottom: 0;
+    }
+  }
+
 
 }
