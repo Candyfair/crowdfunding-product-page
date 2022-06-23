@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 
 import './style.scss';
-import close from 'src/assets/images/icon-close-modal.svg';
 
 import Pledge from './Pledge';
 import { setModal } from '../../../redux/actions/modals';

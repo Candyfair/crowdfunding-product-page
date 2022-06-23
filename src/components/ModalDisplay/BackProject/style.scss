@@ -184,15 +184,21 @@
 
     &__details {
       @include flexCenter(space-between, center, row);
+      padding-top: 0;
+      padding-bottom: calc($spacer/2);
       display: none;
+      // margin-top: -$spacer;
 
       &__title {
         text-align: left;
-        white-space: nowrap;
+        position: relative;
+        top: $spacer*2.5; // Align with buttons
       }
 
       &__enter {
         @include flexCenter(flex-end, center, row);
+        position: relative;
+        top: -$spacer;
 
         &__input {
           caret-color: $primary-moderate;

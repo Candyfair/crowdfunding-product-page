@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { setBookmark } from '../../redux/actions/bookmark';
 import { setModal } from '../../redux/actions/modals';
-import { setPledge } from '../../redux/actions/pledge';
+import { setChecked, setPledge } from '../../redux/actions/pledge';
 
 import './style.scss';
 
@@ -17,6 +17,7 @@ const Bookmark = () => {
   // Open the Pledge modal with no option selected
   const openModalNoOption = () => {
     dispatch(setPledge(''));
+    dispatch(setChecked(''));
     dispatch(setModal(true, 'pledge'));
   };
 

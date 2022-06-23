@@ -37,6 +37,7 @@ const Pledge = ({
           id={id}
           disabled={qty === 0}
           onChange={handlePledge}
+          checked={checked === id}
         />
         <div className="pledge__reward__header">
           <div className="pledge__reward__header__titles">
