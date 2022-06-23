@@ -1,6 +1,8 @@
+import PropTypes from 'prop-types';
+
 import './style.scss';
 
-const Funding = () => (
+const Funding = ({ target, date }) => (
   <section className="content__wrapper funding">
     <div className="funding__details">
       <div className="funding__details__texts">
@@ -33,5 +35,10 @@ const Funding = () => (
     </div>
   </section>
 );
+
+Funding.propTypes = {
+  target: PropTypes.number.isRequired,
+  date: PropTypes.string.isRequired,
+};
 
 export default Funding;

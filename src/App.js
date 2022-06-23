@@ -12,10 +12,12 @@ import {
 
 // Import data
 import data from './data/options';
+import targets from './data/targets';
 
 // == Composant
 const App = () => {
   const { options } = data;
+  const { target, date } = targets;
 
   return (
     <div className="global">
@@ -25,7 +27,7 @@ const App = () => {
 
       <main className="content">
         <Intro />
-        <Funding />
+        <Funding target={target} date={date} />
         <About options={options} />
       </main>
 

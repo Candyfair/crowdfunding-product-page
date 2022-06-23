@@ -6,7 +6,6 @@ import check from '../../../assets/images/icon-check.svg';
 
 const ThankYou = () => {
   const { element } = useSelector((state) => state.modals);
-  const { amount } = useSelector((state) => state.pledge);
 
   const dispatch = useDispatch();
   const closeModal = () => {
@@ -31,7 +30,6 @@ const ThankYou = () => {
         Got it!
       </button>
 
-      <p className="error">Amount passed: {amount}</p>
     </div>
   );
 };
