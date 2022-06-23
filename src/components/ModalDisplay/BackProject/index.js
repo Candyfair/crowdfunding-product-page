@@ -24,7 +24,7 @@ const BackProject = ({ pledges }) => {
 
   // Get pledge amount
   const { checked, amount, error } = useSelector((state) => state.pledge);
-  console.log(`checked: ${checked}, amount: ${amount}`);
+  console.log(`checked: ${checked}, amount: ${amount}, error: ${error}`);
 
   const handleChecked = () => {
     dispatch(setChecked('noreward')); // Keep the option selected
@@ -41,7 +41,19 @@ const BackProject = ({ pledges }) => {
     if (amount === '') return displayErrorMessage();
 
     dispatch(setModal(true, 'thankyou'));
-    console.log('The amount is: ', amount);
+  };
+
+  // Check pledge amount
+  const checkAmount = () => {
+    if (amount === 'on') {
+      displayErrorMessage();
+    }
+    else if (amount < 1) {
+      displayErrorMessage();
+    }
+    else {
+      openModalThankYou();
+    }
   };
 
   // Show or hide modal
@@ -95,7 +107,7 @@ const BackProject = ({ pledges }) => {
               <button
                 className="content__button pledge__button"
                 type="button"
-                onClick={amount !== 'on' ? openModalThankYou : displayErrorMessage}
+                onClick={checkAmount}
               >
                 Continue
               </button>

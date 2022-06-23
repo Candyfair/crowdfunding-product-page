@@ -132,8 +132,22 @@
   display: block;
 }
 
-// ---DESKTOP
+// Error message if pledge is empty
+.error {
+  font-size: 0.8rem;
+  color: $error;
+  position: absolute;
+  left: 50%;
+  bottom: $spacer*2;
+  transform: translate(-50%,-50%);
+}
+
+// ------------------ DESKTOP ------------------------
 @media only screen and (min-width: $desktop) {
+
+  .modal__wrapper {
+    max-width: 730px;
+  }
 
   .pledge {
     @include flexCenter(center, flex-start, column);
@@ -218,10 +232,10 @@
 
   // Error message if pledge is empty
   .error {
-    font-size: 0.8rem;
-    color: $error;
     position: absolute;
     bottom: 5px;
     right: 52px;
+    transform: none;
   }
+
 }

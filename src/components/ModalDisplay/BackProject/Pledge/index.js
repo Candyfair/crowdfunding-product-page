@@ -29,6 +29,7 @@ const Pledge = ({
   const handlePledge = () => {
     dispatch(setPledge(pledge));
     handleChecked();
+    hideErrorMessage();
   };
 
   // Controlled inputs
@@ -40,7 +41,19 @@ const Pledge = ({
   // Open Thank you modal and pass amount
   const openModalThankYou = () => {
     dispatch(setModal(true, 'thankyou'));
-    console.log('The amount is: ', amount);
+  };
+
+  // Check pledge amount
+  const checkAmount = () => {
+    if (amount === '') {
+      displayErrorMessage();
+    }
+    else if (amount < 1) {
+      displayErrorMessage();
+    }
+    else {
+      openModalThankYou();
+    }
   };
 
   return (
@@ -99,7 +112,7 @@ const Pledge = ({
           <button
             className="content__button pledge__button"
             type="button"
-            onClick={amount !== '' ? openModalThankYou : displayErrorMessage}
+            onClick={checkAmount}
           >
             Continue
           </button>
