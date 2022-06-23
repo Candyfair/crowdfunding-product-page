@@ -1,11 +1,14 @@
 import PropTypes from 'prop-types';
 
-import currencyFormat from '../../utils/utils';
+import { currencyFormat, daysLeft } from '../../utils/utils';
 
 import './style.scss';
 
 const Funding = ({ target, date }) => {
   const total = currencyFormat(target);
+
+  // Number of days left
+  const days = daysLeft(date);
 
   return (
     <section className="content__wrapper funding">
@@ -29,7 +32,7 @@ const Funding = ({ target, date }) => {
 
         <div className="funding__details__texts">
           <div>
-            <div className="funding__details__numbers">56</div>
+            <div className="funding__details__numbers">{days}</div>
             <div className="funding__details__desc">days left</div>
           </div>
         </div>
