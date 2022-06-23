@@ -9,7 +9,7 @@ import BackProject from './BackProject';
 import ThankYou from './ThankYou';
 
 const ModalDisplay = ({ pledges }) => {
-  const { modal } = useSelector((state) => state.modals);
+  const { modal, element } = useSelector((state) => state.modals);
   const dispatch = useDispatch();
 
   if (!modal) return null;
@@ -24,7 +24,10 @@ const ModalDisplay = ({ pledges }) => {
         className="modal"
         onClick={() => dispatch(setModal(false, 'none'))}
       >
-        <div className="modal__wrapper" onClick={(e) => e.stopPropagation()}> {/* Prevents closure when clicking inside the wrapper */}
+        <div
+          className={`modal__wrapper${element === 'thankyou' ? ' thankyou' : ''}`}
+          onClick={(e) => e.stopPropagation()} /* Prevents closure when clicking inside the wrapper */
+        >
           <BackProject pledges={pledges} />
           <ThankYou />
         </div>

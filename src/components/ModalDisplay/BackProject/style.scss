@@ -73,6 +73,7 @@
     padding: $spacer*1.5;
     margin-left: -$spacer*1.5;
     margin-right: -$spacer*1.5;
+    position: relative;
 
     &__title {
       text-align: center;
@@ -136,10 +137,12 @@
 .error {
   font-size: 0.8rem;
   color: $error;
+
   position: absolute;
   left: 50%;
-  bottom: $spacer*2;
+  bottom: -5px;
   transform: translate(-50%,-50%);
+  white-space: nowrap;
 }
 
 // ------------------ DESKTOP ------------------------
@@ -234,8 +237,7 @@
   .error {
     position: absolute;
     bottom: 5px;
-    right: 52px;
-    transform: none;
+    transform: translateX(55%);
   }
 
 }

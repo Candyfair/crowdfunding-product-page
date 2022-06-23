@@ -1,7 +1,13 @@
 @import '../../../styles/vars';
 @import '../../../styles/mixins';
 
+
+
 // ---DESKTOP
 @media only screen and (min-width: $desktop) {
+
+  .thankyou {
+    width: 540px;
+  }
 
 }
