@@ -1,8 +1,9 @@
-import { SET_CHECKED, SET_PLEDGE } from '../actions/pledge';
+import { SET_CHECKED, SET_PLEDGE, SHOW_ERROR_MESSAGE } from '../actions/pledge';
 
 const initialState = {
   checked: '',
   amount: '',
+  error: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -17,6 +18,12 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         checked: action.value,
+      };
+
+    case SHOW_ERROR_MESSAGE:
+      return {
+        ...state,
+        error: action.value,
       };
 
     default:

@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
+import { setModal } from '../../../../redux/actions/modals';
 import { setChecked, setPledge } from '../../../../redux/actions/pledge';
 
 import './style.scss';
@@ -24,6 +25,12 @@ const Pledge = ({
   // Controlled inputs
   const handleChange = (event) => {
     dispatch(setPledge(event.target.value));
+  };
+
+  // Open Thank you modal and pass amount
+  const openModalThankYou = () => {
+    dispatch(setModal(true, 'thankyou'));
+    console.log('The amount is: ', amount);
   };
 
   return (
@@ -79,7 +86,13 @@ const Pledge = ({
             />
           </span>
 
-          <button className="content__button pledge__button" type="submit">Continue</button>
+          <button
+            className="content__button pledge__button"
+            type="button"
+            onClick={openModalThankYou}
+          >
+            Continue
+          </button>
         </div>
 
       </div>

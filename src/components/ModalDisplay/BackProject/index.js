@@ -5,7 +5,7 @@ import './style.scss';
 
 import Pledge from './Pledge';
 import { setModal } from '../../../redux/actions/modals';
-import { setChecked, setPledge } from '../../../redux/actions/pledge';
+import { setChecked, setPledge, showErrorMessage } from '../../../redux/actions/pledge';
 
 const BackProject = ({ pledges }) => {
   const dispatch = useDispatch();
@@ -13,17 +13,35 @@ const BackProject = ({ pledges }) => {
   // Modal status
   const { element } = useSelector((state) => state.modals);
 
+  // Show error message if pledge is empty
+  const displayErrorMessage = () => {
+    dispatch(showErrorMessage(true));
+  };
+
+  const hideErrorMessage = () => {
+    dispatch(showErrorMessage(false));
+  };
+
   // Get pledge amount
-  const { checked, amount } = useSelector((state) => state.pledge);
+  const { checked, amount, error } = useSelector((state) => state.pledge);
   console.log(`checked: ${checked}, amount: ${amount}`);
 
   const handleChecked = () => {
-    dispatch(setChecked('noreward'));
+    dispatch(setChecked('noreward')); // Keep the option selected
   };
 
   const handlePledge = (e) => {
     dispatch(setPledge(e.target.value));
     handleChecked();
+    hideErrorMessage();
+  };
+
+  // Open Thank you modal and pass amount
+  const openModalThankYou = () => {
+    if (amount === '') return displayErrorMessage();
+
+    dispatch(setModal(true, 'thankyou'));
+    console.log('The amount is: ', amount);
   };
 
   // Show or hide modal
@@ -51,10 +69,8 @@ const BackProject = ({ pledges }) => {
               className="pledge__reward__radio-button"
               name="pledge"
               id="noreward"
-              value="noreward"
               checked={checked === 'noreward'}
               onChange={handlePledge}
-
             />
             <label htmlFor="noreward" className="pledge__reward__pledge-title">Pledge with no reward</label>
           </div>
@@ -67,11 +83,28 @@ const BackProject = ({ pledges }) => {
 
             <div className="pledge__details__enter">
               <span className="input-symbol-dollar">
-                <input className="pledge__details__enter__input" type="text" name="pledged" id="pledged" />
+                <input
+                  className="pledge__details__enter__input"
+                  type="text"
+                  name="pledged"
+                  id="pledged"
+                  onChange={handlePledge}
+                />
               </span>
 
-              <button className="content__button pledge__button" type="submit">Continue</button>
+              <button
+                className="content__button pledge__button"
+                type="button"
+                onClick={amount !== 'on' ? openModalThankYou : displayErrorMessage}
+              >
+                Continue
+              </button>
             </div>
+
+            {/* Error message if pledge is emply */}
+            {
+              error && <span className="error">Please enter a pledge amount</span>
+            }
 
           </div>
 

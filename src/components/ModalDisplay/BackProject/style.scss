@@ -187,7 +187,7 @@
       padding-top: 0;
       padding-bottom: calc($spacer/2);
       display: none;
-      // margin-top: -$spacer;
+      position: relative;
 
       &__title {
         text-align: left;
@@ -214,5 +214,14 @@
   // Show and hide Enter pledge div
   .show {
     display: block;
+  }
+
+  // Error message if pledge is empty
+  .error {
+    font-size: 0.8rem;
+    color: $error;
+    position: absolute;
+    bottom: 5px;
+    right: 52px;
   }
 }
