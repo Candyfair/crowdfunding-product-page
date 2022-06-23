@@ -181,5 +181,32 @@
         margin-bottom: $spacer*2;
       }
     }
+
+    &__details {
+      @include flexCenter(space-between, center, row);
+      display: none;
+
+      &__title {
+        text-align: left;
+        white-space: nowrap;
+      }
+
+      &__enter {
+        @include flexCenter(flex-end, center, row);
+
+        &__input {
+          caret-color: $primary-moderate;
+        }
+      }
+    }
+
+    &__button {
+      margin-left: $spacer;
+    }
+  }
+
+  // Show and hide Enter pledge div
+  .show {
+    display: block;
   }
 }
