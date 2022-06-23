@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { setModal } from '../../../../redux/actions/modals';
-import { setChecked, setPledge } from '../../../../redux/actions/pledge';
+import { setChecked, setPledge, showErrorMessage } from '../../../../redux/actions/pledge';
 
 import './style.scss';
 
@@ -10,8 +10,17 @@ const Pledge = ({
 }) => {
   const dispatch = useDispatch();
 
+  // Show error message if pledge is empty
+  const displayErrorMessage = () => {
+    dispatch(showErrorMessage(true));
+  };
+
+  const hideErrorMessage = () => {
+    dispatch(showErrorMessage(false));
+  };
+
   // Get pledge amount and checked status
-  const { amount, checked } = useSelector((state) => state.pledge);
+  const { amount, checked, error } = useSelector((state) => state.pledge);
 
   const handleChecked = () => {
     dispatch(setChecked(id));
@@ -25,6 +34,7 @@ const Pledge = ({
   // Controlled inputs
   const handleChange = (event) => {
     dispatch(setPledge(event.target.value));
+    hideErrorMessage();
   };
 
   // Open Thank you modal and pass amount
@@ -89,11 +99,16 @@ const Pledge = ({
           <button
             className="content__button pledge__button"
             type="button"
-            onClick={openModalThankYou}
+            onClick={amount !== '' ? openModalThankYou : displayErrorMessage}
           >
             Continue
           </button>
         </div>
+
+        {/* Error message if pledge is emply */}
+        {
+          error && <span className="error">Please enter a pledge amount</span>
+        }
 
       </div>
 
