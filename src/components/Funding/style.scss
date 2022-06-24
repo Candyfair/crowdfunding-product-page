@@ -26,6 +26,7 @@
     }
   }
 
+  // Tracker gauge line
   &__tracker {
     width: 280px;
     margin: 0 auto;
@@ -44,7 +45,7 @@
     }
     
     &__backed {
-      width: 75%;
+      width: 0; 
     }
   }
 }

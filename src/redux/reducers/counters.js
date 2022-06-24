@@ -1,6 +1,6 @@
 const initialState = {
-  backed: 89914,
-  backers: 56,
+  backed: 69000,
+  backers: 3000,
 };
 
 const reducer = (state = initialState, action = {}) => {
