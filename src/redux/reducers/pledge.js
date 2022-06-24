@@ -2,7 +2,7 @@ import { SET_CHECKED, SET_PLEDGE, SHOW_ERROR_MESSAGE } from '../actions/pledge';
 
 const initialState = {
   checked: '',
-  amount: '',
+  amount: 0,
   error: false,
 };
 

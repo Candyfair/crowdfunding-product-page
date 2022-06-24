@@ -6,6 +6,7 @@ import './style.scss';
 import Pledge from './Pledge';
 import { setModal } from '../../../redux/actions/modals';
 import { setChecked, setPledge, showErrorMessage } from '../../../redux/actions/pledge';
+import { addBacker, addNewPledge } from '../../../redux/actions/counters';
 
 const BackProject = ({ pledges }) => {
   const dispatch = useDispatch();
@@ -38,9 +39,14 @@ const BackProject = ({ pledges }) => {
 
   // Open Thank you modal and pass amount
   const openModalThankYou = () => {
-    if (amount === '') return displayErrorMessage();
-
-    dispatch(setModal(true, 'thankyou'));
+    if (amount === '') {
+      displayErrorMessage();
+    }
+    else {
+      dispatch(addNewPledge(parseInt(amount, 10))); // Increase backed amount with new pledge
+      dispatch(addBacker()); // Add +1 backer
+      dispatch(setModal(true, 'thankyou'));
+    }
   };
 
   // Check pledge amount
@@ -100,6 +106,12 @@ const BackProject = ({ pledges }) => {
                   type="text"
                   name="pledged"
                   id="pledged"
+                  // Force the use of numbers in the field
+                  onKeyPress={(event) => {
+                    if (!/[0-9]/.test(event.key)) {
+                      event.preventDefault();
+                    }
+                  }}
                   onChange={handlePledge}
                 />
               </span>

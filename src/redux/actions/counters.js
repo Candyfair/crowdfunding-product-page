@@ -6,7 +6,6 @@ export const addNewPledge = (payload) => ({
   payload,
 });
 
-export const addBacker = (payload) => ({
+export const addBacker = () => ({
   type: ADD_BACKER,
-  payload,
 });

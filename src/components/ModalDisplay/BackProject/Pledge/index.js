@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
+import { addBacker, addNewPledge } from '../../../../redux/actions/counters';
 import { setModal } from '../../../../redux/actions/modals';
 import { setChecked, setPledge, showErrorMessage } from '../../../../redux/actions/pledge';
 
@@ -40,7 +41,9 @@ const Pledge = ({
 
   // Open Thank you modal and pass amount
   const openModalThankYou = () => {
-    dispatch(setModal(true, 'thankyou'));
+    dispatch(addNewPledge(parseInt(amount, 10))); // Increase backed amount with new pledge
+    dispatch(addBacker()); // Add +1 backer
+    dispatch(setModal(true, 'thankyou')); // Open the modal
   };
 
   // Check pledge amount
@@ -105,6 +108,12 @@ const Pledge = ({
               name="pledged"
               id="pledged"
               value={amount}
+              // Force the use of numbers in the field
+              onKeyPress={(event) => {
+                if (!/[0-9]/.test(event.key)) {
+                  event.preventDefault();
+                }
+              }}
               onChange={handleChange}
             />
           </span>
