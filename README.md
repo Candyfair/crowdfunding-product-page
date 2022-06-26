@@ -37,9 +37,7 @@ Desktop :
 
 Mobile :
 
-![Mobile homepage](./src/assets/screenshots/mobile1.png)
-![Select a pledge on mobile](./src/assets/screenshots/mobile2.png)
-![Confirmation screen on mobile](./src/assets/screenshots/mobile3.png)
+![Mobile screenshots](./src/assets/screenshots/mobile.png)
 
 ### Links
 
