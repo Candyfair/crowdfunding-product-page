@@ -32,8 +32,6 @@ Users should be able to:
 Desktop :
 
 ![Homepage](./src/assets/screenshots/img1.png)
-![Select a pledge](./src/assets/screenshots/img2.png)
-![Confirmation screen](./src/assets/screenshots/img3.png)
 
 Mobile :
 

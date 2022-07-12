@@ -25,7 +25,20 @@
     border-radius: 8px;
     z-index: 50;
   }
+  
+  & .mobilemenu-background {
+    background: linear-gradient(180deg, $black 0%, rgba(0, 0, 0, 0.0001) 100%);
+    mix-blend-mode: normal;
+    opacity: 0.6;
+  }
 }
+
+.mobilemenu {
+    margin-top: 88px;
+    align-items: flex-start;
+    padding-top: $spacer*1.5;
+}
+
 
 // ---DESKTOP
 @media only screen and (min-width: $desktop) {

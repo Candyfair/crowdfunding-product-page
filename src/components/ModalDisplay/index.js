@@ -7,6 +7,7 @@ import './style.scss';
 
 import BackProject from './BackProject';
 import ThankYou from './ThankYou';
+import MobileMenu from './MobileMenu';
 
 const ModalDisplay = ({ pledges }) => {
   const { modal, element } = useSelector((state) => state.modals);
@@ -21,15 +22,16 @@ const ModalDisplay = ({ pledges }) => {
     >
 
       <section
-        className="modal"
+        className={`modal${element === 'mobilemenu' ? ' mobilemenu-background' : ''}`}
         onClick={() => dispatch(setModal(false, 'none'))}
       >
         <div
-          className={`modal__wrapper${element === 'thankyou' ? ' thankyou' : ''}`}
+          className={`modal__wrapper${element === 'thankyou' ? ' thankyou' : ''}${element === 'mobilemenu' ? ' mobilemenu' : ''}`}
           onClick={(e) => e.stopPropagation()} /* Prevents closure when clicking inside the wrapper */
         >
           <BackProject pledges={pledges} />
           <ThankYou />
+          <MobileMenu />
         </div>
       </section>
 

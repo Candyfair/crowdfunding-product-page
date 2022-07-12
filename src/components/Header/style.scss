@@ -10,6 +10,11 @@
   &__elements {
     @include flexCenter(space-between, center, row);
     padding: $spacer*1.5;
+
+    &__logo-top {
+      position: relative;
+      z-index: 2;
+    }
   }
 }
 

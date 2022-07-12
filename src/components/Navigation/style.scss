@@ -1,6 +1,11 @@
 @import '../../styles/vars';
 @import '../../styles/mixins';
 
+.close {
+  position: relative;
+  z-index: 2;
+}
+
 // DESKTOP
 @media only screen and (min-width: $desktop) {
   .menu {
