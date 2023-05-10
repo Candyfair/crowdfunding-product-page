@@ -1,8 +1,8 @@
 import { ADD_BACKER, ADD_NEW_PLEDGE } from "../actions/counters";
 
 const initialState = {
-  backed: 69000,
-  backers: 3000,
+  backed: 89914,
+  backers: 5007,
 };
 
 const reducer = (state = initialState, action = {}) => {
